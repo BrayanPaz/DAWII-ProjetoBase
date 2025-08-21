@@ -6,12 +6,12 @@
         <td>Matricula</td>
         <td>Ações</td>
     </tr>
-    <%for(nome, matricula) as Alunos{%>
+    <%for(const{nome, matricula} of Alunos){%>
     <tr>
-        <td><%=nome %></td>
-        <td><%=matricula %></td>
+        <td><%=nome%></td>
+        <td><%=matricula%></td>
         <td></td>
     </tr>
-    <%})
+    <%}%>
 </table>
 <%-include('../rodape.ejs')%>

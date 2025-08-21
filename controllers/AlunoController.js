@@ -1,4 +1,4 @@
-import Aluno from '../models/Aluno.js';
+import Aluno from '../models/aluno.js';
 
 export default class AlunoController{
     constructor(caminhoBase='aluno/'){
@@ -16,7 +16,7 @@ export default class AlunoController{
         }
         this.list = async (req, res) => {
             const resultado = await Aluno.find({})
-            res.render(this.caminhoBase +'lst',  {Alunos: resultado})
+            res.render(this.caminhoBase +'list',  {Alunos: resultado})
         }
     }
 }
