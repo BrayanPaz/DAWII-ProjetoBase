@@ -1,0 +1,17 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Alunos</h1>
+<table>
+    <tr>
+        <td>Nome</td>
+        <td>Matricula</td>
+        <td>Ações</td>
+    </tr>
+    <%for(nome, matricula) as Alunos{%>
+    <tr>
+        <td><%=nome %></td>
+        <td><%=matricula %></td>
+        <td></td>
+    </tr>
+    <%})
+</table>
+<%-include('../rodape.ejs')%>

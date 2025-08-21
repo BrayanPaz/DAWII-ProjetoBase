@@ -1,0 +1,17 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Adicionar Aluno</h1>
+<div>
+    <a href="/aluno/list">Lista de Alunos</a>
+</div>
+<div>
+    <form method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+        <br>
+        <label>Matricula:</label>
+        <input type="text" name="matricula" required>
+        <br>
+        <button type="submit">Adicionar</button>
+    </form>
+</div>
+<%-include('../rodape.ejs')%>
