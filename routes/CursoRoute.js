@@ -8,5 +8,7 @@ const caminhobase = 'curso/'
 router.get(`/${caminhobase}add`, controller.openAdd)
 router.post(`/${caminhobase}add`, controller.add)
 router.get(`/${caminhobase}list`, controller.list)
+router.get(`/${caminhobase}edit/:id`, controller.openEdit)
+router.post(`/${caminhobase}edit/:id`, controller.edit)
 
 export default router

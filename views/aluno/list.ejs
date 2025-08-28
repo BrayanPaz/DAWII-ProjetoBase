@@ -6,11 +6,16 @@
         <td>Matricula</td>
         <td>Ações</td>
     </tr>
-    <%for(const{nome, matricula} of Alunos){%>
+    <%for(const{id, nome, matricula} of Alunos){%>
     <tr>
         <td><%=nome%></td>
         <td><%=matricula%></td>
-        <td></td>
+        <td>
+            <a href="/aluno/edit/<%=id%>">Editar</a>
+            <!--<form method="post" action="/aluno/delete/<%=id%>" style="display:inline;">
+              <button type="submit">Excluir</button>
+            </form>-->
+        </td>
     </tr>
     <%}%>
 </table>

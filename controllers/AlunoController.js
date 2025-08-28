@@ -16,7 +16,18 @@ export default class AlunoController{
         }
         this.list = async (req, res) => {
             const resultado = await Aluno.find({})
-            res.render(this.caminhoBase +'list',  {Alunos: resultado})
+            res.render(this.caminhoBase +'list', {Alunos: resultado})
+        }
+        this.openEdit = async (req, res) => {
+            const aluno = await Aluno.findById(req.params.id)
+            res.render(this.caminhoBase +'edit', {Aluno: aluno})
+        }
+        this.edit = async (req, res) => {
+            await Aluno.findByIdAndUpdate(req.params.id, {
+                nome: req.body.nome,
+                matricula: req.body.matricula
+            })
+            res.redirect('/'+this.caminhoBase+'list')
         }
     }
 }

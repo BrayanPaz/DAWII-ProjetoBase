@@ -20,5 +20,18 @@ export default class CursoController{
             const resultado = await Curso.find({})
             res.render(this.caminhoBase +'list',  {Cursos: resultado})
         }
+        this.openEdit = async (req, res) => {
+            const curso = await Curso.findById(req.params.id)
+            res.render(this.caminhoBase +'edit', {Curso: curso})
+        }
+        this.edit = async (req, res) => {
+            await Curso.findByIdAndUpdate(req.params.id, {
+                nome: req.body.nome,
+                nivel: req.body.nivel,
+                anoFundacao: req.body.anoFundacao,
+                area: req.body.area
+            })
+            res.redirect('/'+this.caminhoBase+'list')
+        }
     }
 }
