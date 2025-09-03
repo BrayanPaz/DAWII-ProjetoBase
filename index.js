@@ -22,6 +22,6 @@ app.set('views', join(__dirname, '/views'));
 app.use(routes)
 app.use(alunoRoutes)
 app.use(cursoRoutes)
-app.listen(3002)
+app.listen(3001)
 // Exporta o handler compatível com Vercel
 export default app;

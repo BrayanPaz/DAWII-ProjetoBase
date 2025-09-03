@@ -33,5 +33,14 @@ export default class CursoController{
             })
             res.redirect('/'+this.caminhoBase+'list')
         }
+        this.delete = async (req,res) => {
+            await Curso.findByIdAndDelete(req.params.id)
+            res.redirect('/'+this.caminhoBase+'list')
+        }
+        this.find = async (req, res) => {
+            const filtro = req.body.filtro
+            const resultado = await Curso.find({nome: {$regex: filtro, $options: 'i'}})
+            res.render(this.caminhoBase+'list', {Cursos: resultado})
+        }
     }
 }

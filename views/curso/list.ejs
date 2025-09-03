@@ -1,19 +1,38 @@
 <%-include('../cabecalho.ejs')%>
-<h1>Alunos</h1>
-<table>
-    <tr>
-        <td>Nome</td>
-        <td>Área</td>
-        <td>Nível</td>
-        <td>Ano de Fundação</td>
-    </tr>
-    <%for(const{nome, area, nivel, anoFundacao} of Cursos){%>
-    <tr>
-        <td><%=nome%></td>
-        <td><%=area%></td>
-        <td><%=nivel%></td>
-        <td><%=anoFundacao%></td>
-    </tr>
-    <%}%>
-</table>
+    <h1>Alunos</h1>
+    <div>
+        <form action="" method="post">
+            <input type="text" name="filtro" placeholder="Filtrar por nome">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Área</td>
+            <td>Nível</td>
+            <td>Ano de Fundação</td>
+            <td>Ações</td>
+        </tr>
+        <%for(const{nome, area, nivel, anoFundacao, id} of Cursos){%>
+            <tr>
+                <td>
+                    <%=nome%>
+                </td>
+                <td>
+                    <%=area%>
+                </td>
+                <td>
+                    <%=nivel%>
+                </td>
+                <td>
+                    <%=anoFundacao%>
+                </td>
+                <td>
+                    <a href="/curso/edit/<%=id%>">Editar</a>
+                    <a href="/curso/delete/<%=id%>">Excluir</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
 <%-include('../rodape.ejs')%>

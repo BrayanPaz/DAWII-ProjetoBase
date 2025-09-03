@@ -1,22 +1,30 @@
-<%-include('../cabecalho.ejs')%>
-<h1>Alunos</h1>
-<table>
-    <tr>
-        <td>Nome</td>
-        <td>Matricula</td>
-        <td>Ações</td>
-    </tr>
-    <%for(const{id, nome, matricula} of Alunos){%>
-    <tr>
-        <td><%=nome%></td>
-        <td><%=matricula%></td>
-        <td>
-            <a href="/aluno/edit/<%=id%>">Editar</a>
-            <!--<form method="post" action="/aluno/delete/<%=id%>" style="display:inline;">
-              <button type="submit">Excluir</button>
-            </form>-->
-        </td>
-    </tr>
-    <%}%>
-</table>
-<%-include('../rodape.ejs')%>
+<%-include('.. /cabecalho.ejs')%>
+    <h1>Alunos</h1>
+    <div>
+        <form action="" method="post">
+            <input type="text" name="filtro" placeholder="Filtrar por nome">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Matricula</td>
+            <td>Ações</td>
+        </tr>
+        <%for(const{id, nome, matricula} of Alunos){%>
+            <tr>
+                <td>
+                    <%=nome%>
+                </td>
+                <td>
+                    <%=matricula%>
+                </td>
+                <td>
+                    <a href="/aluno/edit/<%=id%>">Editar</a>
+                    <a href="/aluno/delete/<%=id%>">Excluir</a>
+                </td>
+            </tr>
+            <%}%>
+    </table>
+    <%-include('.. /rodape.ejs')%>

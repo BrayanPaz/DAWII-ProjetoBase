@@ -1,25 +1,25 @@
 <%-include('../cabecalho.ejs')%>
-<h1>Editar Aluno</h1>
-<div>
-    <form method="post">
-        <label>Nome:</label>
-        <input type="text" name="nome" value="<%=Aluno.nome%>" required>
-        <br>
-        <label>Área:</label>
-        <input type="text" name="area" value="<%=Aluno.area%>" required>
-        <br>
-        <label>Nível:</label>
-        <select name="nivel" required>
-            <option value="" disabled selected>Selecione o nível</option>
-            <option value="Técnico">Técnico</option>
-            <option value="Tecnólogo">Tecnólogo</option>
-            <option value="Bacharelado">Bacharelado</option>
-        </select>
-        <br>
-        <label>Ano de Fundação:</label>
-        <input type="number" name="anoFundacao" value="<%=Aluno.anoFundacao%>" required>
-        <br>
-        <button type="submit">Adicionar</button>
-    </form>
-</div>
+    <h1>Editar Aluno</h1>
+    <div>
+        <form method="post">
+            <label>Nome:</label>
+            <input type="text" name="nome" value="<%=Aluno.nome%>" required>
+            <br>
+            <label>Área:</label>
+            <input type="text" name="area" value="<%=Aluno.area%>" required>
+            <br>
+            <label>Nível:</label>
+            <select name="nivel" required>
+                <option value="" disabled selected>Selecione o nível</option>
+                <option value="Técnico">Técnico</option>
+                <option value="Tecnólogo">Tecnólogo</option>
+                <option value="Bacharelado">Bacharelado</option>
+            </select>
+            <br>
+            <label>Ano de Fundação:</label>
+            <input type="number" name="anoFundacao" value="<%=Aluno.anoFundacao%>" required>
+            <br>
+            <button type="submit">Adicionar</button>
+        </form>
+    </div>
 <%-include('../rodape.ejs')%>

@@ -29,5 +29,16 @@ export default class AlunoController{
             })
             res.redirect('/'+this.caminhoBase+'list')
         }
+        this.delete = async (req,res) => 
+        {
+            await Aluno.findByIdAndDelete(req.params.id)
+            res.redirect('/'+this.caminhoBase+'list')
+        }
+        this.find = async(req,res) =>
+        {
+            const filtro = req.body.filtro
+            const resultado = await Aluno.find({nome: {$regex: filtro, $options: 'i'}})
+            res.render(this.caminhoBase+'list', {Alunos: resultado})
+        }
     }
 }
